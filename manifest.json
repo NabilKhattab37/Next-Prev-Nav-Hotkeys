@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Next and Previous button hotkey",
+  "version": "1.0",
+  "description": "Navigate between pages on any website that uses next and previous buttons that have a unique css selector",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Right",
+        "mac": "MacCtrl+Right"
+      },
+      "description": "triggers input for next button"
+    },
+    "_execute_browser_action_previous": {
+      "suggested_key": {
+        "default": "Ctrl+Left",
+        "mac": "MacCtrl+Left"
+      },
+      "description": "triggers input for previous button "
+    },
+    "execute_class_history": {
+      "suggested_key": {
+        "default": "Ctrl+H",
+        "mac": "MacCtrl+H"
+      },
+      "description": "Clears Class History"
+    },
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "nextprev@nextprev"
+      }
+    }
+  }
+}
